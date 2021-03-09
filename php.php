@@ -5,9 +5,42 @@ $url=$_POST["src"] ;
 
 
 $ramdom = rand(5, 15999999999);
+ echo $_POST["name_doc"]; 
+
+$name_doc = $_POST["name_doc"]; 
+
+
  
+
+ if (is_dir($name_doc )) {
+	echo 'Le répertoire existe déjà!';  
+	}
+// Création du nouveau répertoire
+else { 
+mkdir($name_doc );
+echo 'Le répertoire '.$name_doc .' vient d\'être créé!';      
+}
+
+$path = $name_doc.'/';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Le chemin de sauvegarde
-$path = 'images/';
+
 // On coupe le chemin
 $exp = explode('/',$url);
 // On recup l'adresse du serveur
